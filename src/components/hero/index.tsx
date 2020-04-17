@@ -1,5 +1,5 @@
 import React from 'react';
-import { tileSize } from '../../settings/constants';
+import { tileSize, headOffset } from '../../settings/constants';
 
 import './style.css'
 
@@ -10,11 +10,12 @@ const Hero = () => {
       <div 
          style={{
             position: 'absolute',
-            bottom: 48 * 2,
-            left: 48 * 1,
+            bottom: tileSize * 2,
+            left: tileSize * 1,
             width: tileSize,
-            height: 100,
+            height: tileSize + headOffset,
             backgroundImage: `url(${hero})`,
+            backgroundPosition: `0 -${tileSize - headOffset}px`,
             backgroundRepeat: "no-repeat",
             animation: 'hero-animation 1s steps(4) infinite',
          }}
