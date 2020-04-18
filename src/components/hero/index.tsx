@@ -1,42 +1,27 @@
-import React, { useState, KeyboardEvent } from 'react';
-import useEventListener from '@use-it/event-listener';
+import React from 'react';
 
 import { tileSize, headOffset } from '../../settings/constants';
+import useHeroMoviment from '../../hooks/heroMoviment';
 
 import './style.css'
 
 import hero from '../../assets/HERO.png';
 
-
 const Hero = () => {
-   const initialPosition = {
-      x: 15,
-      y: 15
-    };
 
-   const [positionState, updatePositionState] = useState(initialPosition);
-   const [direction, updateDirectionState] = useState('RIGHT');
-
-   useEventListener('keydown', (event: KeyboardEvent<HTMLDivElement>) => {
-      if ((event.key === 'ArrowLeft') && (positionState.x > 0)){
-        updatePositionState({ x: positionState.x - 1, y: positionState.y });
-        updateDirectionState('LEFT');
-      } else if ((event.key === 'ArrowRight') && (positionState.x <= 18)) {
-        updatePositionState({ x: positionState.x + 1, y: positionState.y });
-        updateDirectionState('RIGHT');
-      } else if ((event.key === 'ArrowDown') && (positionState.y > 1)){
-        updatePositionState({ x: positionState.x, y: positionState.y - 1 });
-      } else if ((event.key === 'ArrowUp') && (positionState.y <= 17)){
-        updatePositionState({ x: positionState.x, y: positionState.y + 1 });
-      }
-    });
+  const initialPosition = {
+    x: 15,
+    y: 15
+  };
     
+  const { direction, position } = useHeroMoviment(initialPosition);
+
    return(
       <div 
          style={{
             position: 'absolute',
-            bottom: tileSize * positionState.y,
-            left: tileSize * positionState.x,
+            bottom: tileSize * position.y,
+            left: tileSize * position.x,
             width: tileSize,
             height: tileSize + headOffset,
             backgroundImage: `url(${hero})`,
