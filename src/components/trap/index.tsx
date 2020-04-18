@@ -1,5 +1,5 @@
 import React from 'react';
-import { tileSize, headOffset } from '../../settings/constants';
+import { tileSize } from '../../settings/constants';
 
 import './style.css'
 
