@@ -25,10 +25,11 @@ const Hero = () => {
             width: tileSize,
             height: tileSize + headOffset,
             backgroundImage: `url(${hero})`,
-            backgroundPosition: `0 -${tileSize - headOffset}px`,
-            backgroundRepeat: "no-repeat",
+            backgroundPosition: `0px -${tileSize - headOffset}px`,
+            backgroundRepeat: 'no-repeat',
             animation: 'hero-animation 1s steps(4) infinite',
-            transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`
+            transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`,
+            zIndex: 1
          }}
       />
    );
