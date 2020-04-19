@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { tileSize, headOffset } from '../../settings/constants';
+import { tileSize, headOffset, EDirection } from '../../settings/constants';
 import useHeroMoviment from '../../hooks/heroMoviment';
 
 import './style.css'
@@ -28,7 +28,7 @@ const Hero = () => {
             backgroundPosition: `0 -${tileSize - headOffset}px`,
             backgroundRepeat: "no-repeat",
             animation: 'hero-animation 1s steps(4) infinite',
-            transform: `scaleX(${direction === 'RIGHT' ? 1 : -1})`
+            transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`
          }}
       />
    );
