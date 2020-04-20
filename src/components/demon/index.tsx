@@ -14,7 +14,7 @@ const Demon = () => {
       <div 
          style={{
             position: 'absolute',
-            bottom: tileSize * position.y,
+            top:tileSize * position.y,
             left: tileSize * position.x,
             width: tileSize * 2,
             height: tileSize * 2,

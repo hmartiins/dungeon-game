@@ -20,7 +20,7 @@ const Hero = () => {
       <div 
          style={{
             position: 'absolute',
-            bottom: tileSize * position.y,
+            top:tileSize * position.y,
             left: tileSize * position.x,
             width: tileSize,
             height: tileSize + headOffset,

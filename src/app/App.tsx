@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Board from '../components/board';
+import Debugger from '../components/debug';
 import { gameSize } from '../settings/constants';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           height: gameSize,
         }}
       > 
+        <Debugger />
         <Board />
       </div>
     </div>

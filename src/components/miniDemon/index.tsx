@@ -6,17 +6,19 @@ import './style.css'
 
 import miniDemon from '../../assets/MINI-DEMON.png';
 
-const MiniDemon = () => {
+interface IProps{ 
+   initialPosition: {x:number, y:number}
+}
 
-   const { position, direction } = useEnemyMoviment({x: 10, y: 5});
+const MiniDemon = (props) => {
 
-
+   const { position, direction } = useEnemyMoviment(props.initialPosition);
 
    return(
       <div 
          style={{
             position: 'absolute',
-            bottom: tileSize * position.y,
+            top:tileSize * position.y,
             left: tileSize * position.x,
             width: tileSize,
             height: tileSize + headOffset,

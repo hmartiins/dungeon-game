@@ -10,7 +10,7 @@ const Trap = () => {
       <div 
          style={{
             position: 'absolute',
-            bottom: tileSize * 12,
+            top:tileSize * 12,
             left: tileSize * 2,
             width: tileSize,
             height: tileSize,
