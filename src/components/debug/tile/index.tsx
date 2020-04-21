@@ -21,7 +21,7 @@ function Tile(props: IProps){
       <div style={{
          position: 'absolute',
          left: tileSize * props.position.x,
-         top:tileSize * props.position.y,
+         top:tileSize * props.position.y + 20,
          width: tileSize, 
          height: tileSize, 
          color: color,
