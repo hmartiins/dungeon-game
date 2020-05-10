@@ -26,6 +26,7 @@ function Tile(props: IProps){
          height: tileSize, 
          color: color,
          border: `2px solid ${color}`,
+         zIndex: 777
       }}>
          {props.text}
       </div>
